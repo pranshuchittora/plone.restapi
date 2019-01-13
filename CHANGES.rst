@@ -6,6 +6,11 @@ Changelog
 
 Bugfixes:
 
+- Fix problem when deserializing for nested Dexterity content structures and setting values for the same field.
+  A value for a sub node was not set when it was the same value as it's parent node due to Acquisition.
+  Fixes: #660
+  [thet]
+
 - Tests: retry request on ConnectionError.
   On Jenkins we often get one ConnectionError in a seemingly random test.
   Retrying after a short pause helps.
