@@ -1,30 +1,23 @@
 Changelog
 =========
 
-3.5.1 (unreleased)
+3.5.2 (unreleased)
 ------------------
-
-Bugfixes:
 
 - Fix problem when deserializing for nested Dexterity content structures and setting values for the same field.
   A value for a sub node was not set when it was the same value as it's parent node due to Acquisition.
   Fixes: #660
   [thet]
 
-- Tests: retry request on ConnectionError.
-  On Jenkins we often get one ConnectionError in a seemingly random test.
-  Retrying after a short pause helps.
-  Fixes issue `648 <https://github.com/plone/plone.restapi/issues/648>`_.
-  [maurits, gforcada]
 
-- Close the api_session in tests.
-  This prevents lots of ResourceWarnings about unclosed sockets.
-  Fixes issues `636 <https://github.com/plone/plone.restapi/issues/636>`_
-  and `648 <https://github.com/plone/plone.restapi/issues/648>`_.
-  [maurits, gforcada]
+3.5.1 (2019-02-05)
+------------------
 
-- Standardize errors data structure of email-notification endpoint.
-  [cekk]
+Bugfixes:
+
+- Do not fail on serializing types with fields having non-parametrized widgets.
+  Fixes issue `664 <https://github.com/plone/plone.restapi/issues/664>`_.
+  [elioschmutz]
 
 
 3.5.0 (2018-11-06)
